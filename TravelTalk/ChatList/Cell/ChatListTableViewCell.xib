@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="110" id="KGk-i7-Jjw" customClass="ChatListTableViewCell" customModule="TravelTalk" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="408" height="110"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="408" height="110"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1J1-im-QMB">
+                        <rect key="frame" x="94" y="29" width="41.333333333333343" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="JOi-45-hrl"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XEx-5R-Sb5">
+                        <rect key="frame" x="94" y="53" width="298" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="22" id="Vlt-th-ZQz"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pgy-62-6sg">
+                        <rect key="frame" x="350" y="28.666666666666671" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QvQ-r7-y5M">
+                        <rect key="frame" x="16" y="20" width="70" height="70"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="QvQ-r7-y5M" secondAttribute="height" multiplier="1:1" id="2yJ-1a-bAi"/>
+                            <constraint firstAttribute="height" constant="70" id="yLZ-9w-shB"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="1J1-im-QMB" firstAttribute="leading" secondItem="QvQ-r7-y5M" secondAttribute="trailing" constant="8" id="14O-6T-BMg"/>
+                    <constraint firstItem="1J1-im-QMB" firstAttribute="centerY" secondItem="QvQ-r7-y5M" secondAttribute="centerY" constant="-16" id="92C-BS-kw0"/>
+                    <constraint firstItem="XEx-5R-Sb5" firstAttribute="top" secondItem="1J1-im-QMB" secondAttribute="bottom" constant="4" id="LxZ-aU-Elj"/>
+                    <constraint firstItem="XEx-5R-Sb5" firstAttribute="leading" secondItem="1J1-im-QMB" secondAttribute="leading" id="Rko-1B-1Dy"/>
+                    <constraint firstItem="QvQ-r7-y5M" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="U0g-6D-33L"/>
+                    <constraint firstAttribute="trailing" secondItem="XEx-5R-Sb5" secondAttribute="trailing" constant="16" id="WOD-lr-uVP"/>
+                    <constraint firstItem="Pgy-62-6sg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1J1-im-QMB" secondAttribute="trailing" constant="8" id="aQz-aT-T2G"/>
+                    <constraint firstItem="QvQ-r7-y5M" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="dip-d3-aOl"/>
+                    <constraint firstItem="Pgy-62-6sg" firstAttribute="centerY" secondItem="1J1-im-QMB" secondAttribute="centerY" id="qIb-mQ-Y3X"/>
+                    <constraint firstAttribute="trailing" secondItem="Pgy-62-6sg" secondAttribute="trailing" constant="16" id="vNq-kI-1t9"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="chatLabel" destination="XEx-5R-Sb5" id="wcL-gy-7cv"/>
+                <outlet property="chatRoomLabel" destination="1J1-im-QMB" id="DwL-Xf-JFj"/>
+                <outlet property="dateLabel" destination="Pgy-62-6sg" id="lCg-5Y-UNP"/>
+                <outlet property="userImageView" destination="QvQ-r7-y5M" id="1ch-mJ-Nii"/>
+            </connections>
+            <point key="canvasLocation" x="109.9236641221374" y="42.95774647887324"/>
+        </tableViewCell>
+    </objects>
+</document>
