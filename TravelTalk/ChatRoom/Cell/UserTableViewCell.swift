@@ -18,15 +18,10 @@ class UserTableViewCell: UITableViewCell {
     }
     
     func configureLayout() {
-        messageLabel.numberOfLines = 0
-        
-        messageView.layer.borderColor = UIColor.lightGray.cgColor
-        messageView.layer.borderWidth = 1
-        messageView.backgroundColor = .systemGray5
-        messageView.layer.cornerRadius = 10
-        
-        dateLabel.font = Font().descFont
-        dateLabel.textColor = Font().descFontColor
+        messageLabel.configureChatLabel()
+        messageView.configureChatView()
+        dateLabel.descText()
+        self.selectionStyle = .none
     }
     
     func configureCell(_ data: Chat) {

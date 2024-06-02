@@ -10,6 +10,7 @@ import UIKit
 class ChatRoomViewController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
+    
     var ChatRoomData: ChatRoom?
     
     override func viewDidLoad() {
@@ -29,8 +30,10 @@ extension ChatRoomViewController: setupUI {
         tableView.delegate = self
         tableView.dataSource = self
         
-        let xib = UINib(nibName: UserTableViewCell.identifier, bundle: nil)
-        tableView.register(xib, forCellReuseIdentifier: UserTableViewCell.identifier)
+        let userXib = UINib(nibName: UserTableViewCell.identifier, bundle: nil)
+        tableView.register(userXib, forCellReuseIdentifier: UserTableViewCell.identifier)
+        let friendXib = UINib(nibName: FriendTableViewCell.identifier, bundle: nil)
+        tableView.register(friendXib, forCellReuseIdentifier: FriendTableViewCell.identifier)
         
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = UITableView.automaticDimension
@@ -54,7 +57,10 @@ extension ChatRoomViewController: UITableViewDelegate, UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: UserTableViewCell.identifier, for: indexPath) as? UserTableViewCell else { return UITableViewCell() }
             cell.configureCell(chat)
             return cell
+        } else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: FriendTableViewCell.identifier, for: indexPath) as? FriendTableViewCell else { return UITableViewCell() }
+            cell.configureCell(chat)
+            return cell
         }
-        return UITableViewCell()
     }
 }

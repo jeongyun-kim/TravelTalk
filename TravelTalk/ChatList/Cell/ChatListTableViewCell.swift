@@ -13,12 +13,12 @@ class ChatListTableViewCell: UITableViewCell {
     @IBOutlet var chatRoomLabel: UILabel!
     @IBOutlet var userImageView: UIImageView!
     
-    let imageNames: [String] = ["피카츄", "미뇽", "커비", "메타나이트", "디디", "잠자는커비"]
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         configureLayout()
     }
+    
+    
 
     func configureLayout() {
         chatRoomLabel.font = UIFont.systemFont(ofSize: 15, weight: .bold)
@@ -26,17 +26,13 @@ class ChatListTableViewCell: UITableViewCell {
         chatLabel.font = UIFont.systemFont(ofSize: 14)
         chatLabel.textColor = .gray
         
-        userImageView.layer.cornerRadius = 35
-        userImageView.contentMode = .scaleAspectFill
-        userImageView.backgroundColor = .white
+        userImageView.configureProfileImageView()
         
-        dateLabel.font = UIFont.systemFont(ofSize: 12)
-        dateLabel.textColor = .lightGray
+        dateLabel.descText()
     }
     
     func configureCell(_ data: ChatRoom) {
-        let randomImage = imageNames.randomElement()!
-        userImageView.image = UIImage(named: randomImage)
+        userImageView.image = UIImage(named: data.chatroomImage[0])
         
         chatRoomLabel.text = data.chatroomName
         
