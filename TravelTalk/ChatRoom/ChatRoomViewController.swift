@@ -9,6 +9,9 @@ import UIKit
 
 class ChatRoomViewController: UIViewController {
 
+    @IBOutlet var textView: UIView!
+    @IBOutlet var sendBtn: UIButton!
+    @IBOutlet var textField: UITextField!
     @IBOutlet var tableView: UITableView!
     
     var ChatRoomData: ChatRoom?
@@ -17,6 +20,8 @@ class ChatRoomViewController: UIViewController {
         super.viewDidLoad()
         setupNavigation()
         setupTableView()
+        setupKeyboardEvent()
+        setupUI()
     }
 }
 
@@ -38,9 +43,28 @@ extension ChatRoomViewController: setupUI {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.separatorStyle = .none
+        tableView.keyboardDismissMode = .onDrag
     }
     
+    func setupKeyboardEvent() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide),name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
     
+    func setupUI() {
+        textView.backgroundColor = .systemGray6
+        textView.layer.cornerRadius = 10
+        
+        textField.placeholder = "메세지를 입력하세요"
+        textField.backgroundColor = .systemGray6
+        textField.borderStyle = .none
+        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 16, height: 0))
+        textField.leftViewMode = .always
+        textField.layer.cornerRadius = 10
+        
+        sendBtn.tintColor = .lightGray
+        sendBtn.backgroundColor = .systemGray6
+    }
 }
 
 // MARK: TableViewExtension
@@ -61,6 +85,27 @@ extension ChatRoomViewController: UITableViewDelegate, UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: FriendTableViewCell.identifier, for: indexPath) as? FriendTableViewCell else { return UITableViewCell() }
             cell.configureCell(chat)
             return cell
+        }
+    }
+}
+
+// MARK: Action
+extension ChatRoomViewController {
+    @objc func keyboardWillShow(_ sender: Notification) {
+        // 키보드의 frame을 받아오기
+        guard let keyboardFrame = sender.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
+        // 키보드의 높이값
+        let keyboardHeight = keyboardFrame.cgRectValue.height
+
+        // 현재 뷰가 바닥에 붙어있다면 키보드 높이만큼 올리기
+        if view.frame.origin.y == 0 {
+            view.frame.origin.y -= keyboardHeight
+        }
+    }
+
+    @objc func keyboardWillHide(_ sender: Notification) {
+        if view.frame.origin.y != 0 { // 뷰의 위치가 바닥이 아니라면 바닥(0)으로
+            view.frame.origin.y = 0
         }
     }
 }
