@@ -17,10 +17,9 @@ class ChatRoomViewController: UIViewController {
         setupNavigation()
         setupTableView()
     }
-
-
 }
 
+// MARK: UI
 extension ChatRoomViewController: setupUI {
     func setupNavigation() {
         navigationItem.title = ChatRoomData?.chatroomName
@@ -29,19 +28,23 @@ extension ChatRoomViewController: setupUI {
     func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
+        
         let xib = UINib(nibName: UserTableViewCell.identifier, bundle: nil)
         tableView.register(xib, forCellReuseIdentifier: UserTableViewCell.identifier)
+        
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = UITableView.automaticDimension
+        tableView.separatorStyle = .none
     }
     
     
 }
 
-
+// MARK: TableViewExtension
 extension ChatRoomViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return ChatRoomData?.chatList.count ?? 0
+        guard let chatRoomData = ChatRoomData else { return 0 }
+        return chatRoomData.chatList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

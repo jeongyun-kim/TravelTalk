@@ -24,6 +24,7 @@
 		E0E49F052C0B7B0000DA4BCB /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E49F022C0B7B0000DA4BCB /* UserTableViewCell.swift */; };
 		E0E49F072C0C2B8300DA4BCB /* ChatRoom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0E49F062C0C2B8300DA4BCB /* ChatRoom.storyboard */; };
 		E0E49F092C0C2B9000DA4BCB /* ChatRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E49F082C0C2B9000DA4BCB /* ChatRoomViewController.swift */; };
+		E0E49F0B2C0C311300DA4BCB /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E49F0A2C0C311300DA4BCB /* File.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		E0E49F032C0B7B0000DA4BCB /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
 		E0E49F062C0C2B8300DA4BCB /* ChatRoom.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChatRoom.storyboard; sourceTree = "<group>"; };
 		E0E49F082C0C2B9000DA4BCB /* ChatRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomViewController.swift; sourceTree = "<group>"; };
+		E0E49F0A2C0C311300DA4BCB /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				E0C7568F2C0AF6150099B0E5 /* Assets.xcassets */,
 				E0C756912C0AF6150099B0E5 /* LaunchScreen.storyboard */,
 				E0C756942C0AF6150099B0E5 /* Info.plist */,
+				E0E49F0A2C0C311300DA4BCB /* File.swift */,
 			);
 			path = TravelTalk;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 				E02657EA2C0AF8B900D887BA /* ChatListTableViewCell.swift in Sources */,
 				E0E49F092C0C2B9000DA4BCB /* ChatRoomViewController.swift in Sources */,
 				E0C756892C0AF6140099B0E5 /* SceneDelegate.swift in Sources */,
+				E0E49F0B2C0C311300DA4BCB /* File.swift in Sources */,
 				E02657E62C0AF7DB00D887BA /* setupUI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

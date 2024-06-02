@@ -30,13 +30,17 @@ class ChatListViewController: UIViewController {
 extension ChatListViewController: setupUI {
     func setupNavigation() {
         navigationItem.title = "채팅 목록"
+        navigationController?.navigationBar.tintColor = .black
+        navigationItem.backButtonTitle = "" 
     }
     
     func setupTableView() {
         tableView.dataSource = self
         tableView.delegate = self
+        
         let xib = UINib(nibName: ChatListTableViewCell.identifier, bundle: nil)
         tableView.register(xib, forCellReuseIdentifier: ChatListTableViewCell.identifier)
+        
         tableView.rowHeight = 100
         tableView.separatorStyle = .none
     }
