@@ -22,6 +22,7 @@ class ChatRoomViewController: UIViewController {
         setupTableView()
         setupKeyboardEvent()
         setupUI()
+        scrollToBottom()
     }
 }
 
@@ -89,8 +90,9 @@ extension ChatRoomViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-// MARK: Action
+// MARK: Action(keyboard, scrollToBottom)
 extension ChatRoomViewController {
+    // 키보드가 올라왔을 때
     @objc func keyboardWillShow(_ sender: Notification) {
         // 키보드의 frame을 받아오기
         guard let keyboardFrame = sender.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
@@ -103,9 +105,26 @@ extension ChatRoomViewController {
         }
     }
 
+    // 키보드가 사라졌을 때
     @objc func keyboardWillHide(_ sender: Notification) {
         if view.frame.origin.y != 0 { // 뷰의 위치가 바닥이 아니라면 바닥(0)으로
             view.frame.origin.y = 0
+        }
+    }
+    
+    // 테이블뷰의 마지막 셀로 스크롤 내리기
+    func scrollToBottom(){
+        DispatchQueue.main.async {
+            // 채팅방의 채팅 개수
+            guard let cnt = self.ChatRoomData?.chatList.count else { return }
+            // 채팅 개수가 0보다 많다면
+            if cnt > 0 {
+                // idx -> 마지막 채팅의 행 구하기
+                let idx = IndexPath(row: cnt-1, section: 0)
+                // 테이블뷰를 마지막행으로 이동시키기
+                // - animated는 false로 해줘야 스크롤이 내려가는게 안 보임
+               self.tableView.scrollToRow(at: idx, at: .bottom, animated: false)
+            }
         }
     }
 }

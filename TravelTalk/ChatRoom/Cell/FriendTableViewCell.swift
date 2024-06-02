@@ -18,7 +18,7 @@ class FriendTableViewCell: UITableViewCell {
         configureLayout()
     }
     
-    func configureLayout() {
+    private func configureLayout() {
         friendChatView.configureChatView()
         friendChatLabel.configureChatLabel()
         friendNameLabel.font = UIFont.systemFont(ofSize: 14)

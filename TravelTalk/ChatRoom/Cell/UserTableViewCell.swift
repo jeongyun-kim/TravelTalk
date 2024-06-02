@@ -17,7 +17,7 @@ class UserTableViewCell: UITableViewCell {
         configureLayout()
     }
     
-    func configureLayout() {
+    private func configureLayout() {
         messageLabel.configureChatLabel()
         messageView.configureChatView()
         dateLabel.descText()
@@ -29,7 +29,7 @@ class UserTableViewCell: UITableViewCell {
         messageLabel.text = data.message
     }
     
-    func dateFormatted(str: String) -> String {
+    private func dateFormatted(str: String) -> String {
         let dateFormmater = DateFormatter()
         dateFormmater.dateFormat = "YYYY-MM-dd HH:mm"
         let date = dateFormmater.date(from: str)

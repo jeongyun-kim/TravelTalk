@@ -18,17 +18,13 @@ class ChatListTableViewCell: UITableViewCell {
         configureLayout()
     }
     
-    
-
-    func configureLayout() {
+    private func configureLayout() {
         chatRoomLabel.font = UIFont.systemFont(ofSize: 15, weight: .bold)
-            
         chatLabel.font = UIFont.systemFont(ofSize: 14)
         chatLabel.textColor = .gray
-        
         userImageView.configureProfileImageView()
-        
         dateLabel.descText()
+        self.selectionStyle = .none
     }
     
     func configureCell(_ data: ChatRoom) {
@@ -42,7 +38,7 @@ class ChatListTableViewCell: UITableViewCell {
         dateLabel.text = dateFormat(date!)
     }
     
-    func dateFormat(_ lastDate: String) -> String {
+    private func dateFormat(_ lastDate: String) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "YYYY-MM-dd"
         guard let date = dateFormatter.date(from: lastDate) else { return "" }
