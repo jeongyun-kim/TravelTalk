@@ -26,16 +26,16 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbm-zY-4Hg">
-                        <rect key="frame" x="64" y="12" width="269" height="21"/>
+                        <rect key="frame" x="64.000000000000014" y="12" width="235.33333333333337" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DmC-dh-ads">
-                        <rect key="frame" x="64" y="37" width="269" height="77"/>
+                        <rect key="frame" x="64.000000000000014" y="37" width="235.33333333333337" height="77"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dfmafmalmfamfamfkamfmkamfamflmakfmakfmalmfkalmfkamflkmakfamkldmfklamfld" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SUB-Ym-vWk">
-                                <rect key="frame" x="8" y="8" width="253" height="61"/>
+                                <rect key="frame" x="8" y="8" width="219.33333333333334" height="61"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -49,21 +49,30 @@
                             <constraint firstItem="SUB-Ym-vWk" firstAttribute="top" secondItem="DmC-dh-ads" secondAttribute="top" constant="8" id="fuB-MN-dme"/>
                         </constraints>
                     </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BMp-h7-RyW">
+                        <rect key="frame" x="307.33333333333331" y="93" width="41.333333333333314" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="lbm-zY-4Hg" firstAttribute="leading" secondItem="eHU-8B-hEu" secondAttribute="trailing" constant="8" id="2WT-R2-hhU"/>
                     <constraint firstItem="eHU-8B-hEu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="OS9-qg-dXR"/>
                     <constraint firstItem="DmC-dh-ads" firstAttribute="top" secondItem="lbm-zY-4Hg" secondAttribute="bottom" constant="4" id="PPy-yZ-tcs"/>
+                    <constraint firstItem="BMp-h7-RyW" firstAttribute="leading" secondItem="DmC-dh-ads" secondAttribute="trailing" constant="8" symbolic="YES" id="S1R-xg-zcv"/>
+                    <constraint firstItem="BMp-h7-RyW" firstAttribute="bottom" secondItem="DmC-dh-ads" secondAttribute="bottom" id="Wgw-Cy-bD9"/>
                     <constraint firstItem="lbm-zY-4Hg" firstAttribute="top" secondItem="eHU-8B-hEu" secondAttribute="top" id="bft-ni-4o9"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="BMp-h7-RyW" secondAttribute="trailing" constant="80" id="blt-Bu-Hos"/>
                     <constraint firstItem="DmC-dh-ads" firstAttribute="leading" secondItem="lbm-zY-4Hg" secondAttribute="leading" id="gF7-h9-0mr"/>
                     <constraint firstItem="eHU-8B-hEu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="jL9-rM-I60"/>
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="DmC-dh-ads" secondAttribute="bottom" constant="12" id="l5w-ky-xJo"/>
                     <constraint firstItem="DmC-dh-ads" firstAttribute="trailing" secondItem="lbm-zY-4Hg" secondAttribute="trailing" id="ofT-RH-tcO"/>
-                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="DmC-dh-ads" secondAttribute="trailing" constant="100" id="vCb-Nr-LrB"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="dateLabel" destination="BMp-h7-RyW" id="FmS-NS-chX"/>
                 <outlet property="friendChatLabel" destination="SUB-Ym-vWk" id="K2g-j7-y5x"/>
                 <outlet property="friendChatView" destination="DmC-dh-ads" id="yRP-pA-Qhx"/>
                 <outlet property="friendImageView" destination="eHU-8B-hEu" id="U0G-87-76J"/>

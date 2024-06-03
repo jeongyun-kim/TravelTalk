@@ -25,17 +25,7 @@ class UserTableViewCell: UITableViewCell {
     }
     
     func configureCell(_ data: Chat) {
-        dateLabel.text = dateFormatted(str: data.date)
+        dateLabel.text = data.dateFormatted()
         messageLabel.text = data.message
-    }
-    
-    private func dateFormatted(str: String) -> String {
-        let dateFormmater = DateFormatter()
-        dateFormmater.dateFormat = "YYYY-MM-dd HH:mm"
-        let date = dateFormmater.date(from: str)
-        dateFormmater.locale = Locale(identifier: "ko-KR")
-        dateFormmater.dateFormat = "HH:mm a"
-        let result = dateFormmater.string(from: date!)
-        return result
     }
 }

@@ -35,6 +35,16 @@ struct Chat {
     let user: User
     let date: String
     let message: String
+    
+    func dateFormatted() -> String {
+        let dateFormmater = DateFormatter()
+        dateFormmater.dateFormat = "YYYY-MM-dd HH:mm"
+        let date = dateFormmater.date(from: date)
+        dateFormmater.locale = Locale(identifier: "ko-KR")
+        dateFormmater.dateFormat = "HH:mm a"
+        let result = dateFormmater.string(from: date!)
+        return result
+    }
 }
 
 let mockChatList: [ChatRoom] = [

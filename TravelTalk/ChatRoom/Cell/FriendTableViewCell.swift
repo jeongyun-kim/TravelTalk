@@ -8,6 +8,7 @@
 import UIKit
 
 class FriendTableViewCell: UITableViewCell {
+    @IBOutlet var dateLabel: UILabel!
     @IBOutlet var friendChatLabel: UILabel!
     @IBOutlet var friendChatView: UIView!
     @IBOutlet var friendNameLabel: UILabel!
@@ -24,6 +25,7 @@ class FriendTableViewCell: UITableViewCell {
         friendNameLabel.font = UIFont.systemFont(ofSize: 14)
         friendImageView.configureProfileImageView()
         self.selectionStyle = .none
+        dateLabel.descText()
     }
     
     func configureCell(_ data: Chat) {
@@ -32,5 +34,7 @@ class FriendTableViewCell: UITableViewCell {
         friendNameLabel.text = data.user.rawValue
         
         friendChatLabel.text = data.message
+        
+        dateLabel.text = data.dateFormatted()
     }
 }
