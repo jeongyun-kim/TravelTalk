@@ -7,7 +7,14 @@
 
 import UIKit
 
+enum userCnt {
+    case one
+    case four
+}
+
 class ChatListTableViewCell: UITableViewCell {
+    @IBOutlet var fourUserImagesCollections: [UIImageView]!
+    @IBOutlet var userImageViewForFour: UIView!
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var chatLabel: UILabel!
     @IBOutlet var chatRoomLabel: UILabel!
@@ -24,26 +31,29 @@ class ChatListTableViewCell: UITableViewCell {
         chatLabel.textColor = .gray
         userImageView.configureProfileImageView()
         dateLabel.descText()
+        fourUserImagesCollections.forEach { imageView in
+            imageView.configureProfileImageView()
+        }
         self.selectionStyle = .none
     }
     
     func configureCell(_ data: ChatRoom) {
-        userImageView.image = UIImage(named: data.chatroomImage[0])
+        if data.chatroomImage.count == 4 {
+            userImageViewForFour.isHidden = false
+            userImageView.isHidden = true
+            for (idx, image) in data.chatroomImage.enumerated() {
+                fourUserImagesCollections[idx].image = UIImage(named: image)
+            }
+        } else {
+            userImageViewForFour.isHidden = true
+            userImageView.isHidden = false
+            userImageView.image = UIImage(named: data.chatroomImage[0])
+        }
         
         chatRoomLabel.text = data.chatroomName
         
         chatLabel.text = data.chatList.last?.message
         
-        let date = data.chatList.last?.date.components(separatedBy: " ")[0]
-        dateLabel.text = dateFormat(date!)
-    }
-    
-    private func dateFormat(_ lastDate: String) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "YYYY-MM-dd"
-        guard let date = dateFormatter.date(from: lastDate) else { return "" }
-        dateFormatter.dateFormat = "YY.MM.dd"
-        let result = dateFormatter.string(from: date)
-        return result
+        dateLabel.text = data.lastDate
     }
 }

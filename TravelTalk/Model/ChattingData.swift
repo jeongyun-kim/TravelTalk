@@ -11,7 +11,7 @@ enum User: String {
     case jack = "Jack"
     case bran = "Bran"
     case den = "Den"
-    case user //본인
+    case user = "정윤"
     case other_friend = "내옆자리의앞자리에개발잘하는친구"
     case simsim = "심심이"
     
@@ -28,6 +28,16 @@ struct ChatRoom {
     let chatroomImage: [String] //채팅방에 속한 유저 이미지
     let chatroomName: String //채팅방 이름
     var chatList: [Chat] = [] //채팅 화면에서 사용할 데이터
+    
+    var lastDate: String {
+        guard let chatLastDate = chatList.last?.date.components(separatedBy: " ")[0] else { return "" }
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YYYY-MM-dd"
+        guard let date = dateFormatter.date(from: chatLastDate) else { return "" }
+        dateFormatter.dateFormat = "YY.MM.dd"
+        let result = dateFormatter.string(from: date)
+        return result
+    }
 }
 
 //채팅 화면에서 사용할 데이터 구조체
@@ -98,7 +108,7 @@ let mockChatList: [ChatRoom] = [
                      message: "제.. 제가 푸쉬를 안했군요... 얼른 푸쉬하도록 하겠습니다..."),
                 Chat(user: .jack,
                      date: "2024-06-11 13:29",
-                     message: "00님~ 아직도 푸쉬가 안되어있네요 ^_^ 수업 끝나고 면담 진행하도록 할게요~~ 끝나고 남아주세요~"),
+                     message: "\(User.user.rawValue)님~ 아직도 푸쉬가 안되어있네요 ^_^ 수업 끝나고 면담 진행하도록 할게요~~ 끝나고 남아주세요~"),
                 Chat(user: .user,
                      date: "2024-06-11 13:31",
                      message: "넵.."),
