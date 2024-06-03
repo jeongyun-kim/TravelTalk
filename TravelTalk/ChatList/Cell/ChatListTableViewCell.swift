@@ -7,11 +7,6 @@
 
 import UIKit
 
-enum userCnt {
-    case one
-    case four
-}
-
 class ChatListTableViewCell: UITableViewCell {
     @IBOutlet var fourUserImagesCollections: [UIImageView]!
     @IBOutlet var userImageViewForFour: UIView!
