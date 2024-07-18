@@ -11,6 +11,8 @@
 		E02657E62C0AF7DB00D887BA /* setupUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02657E52C0AF7DB00D887BA /* setupUI.swift */; };
 		E02657EA2C0AF8B900D887BA /* ChatListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02657E82C0AF8B900D887BA /* ChatListTableViewCell.swift */; };
 		E02657EB2C0AF8B900D887BA /* ChatListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E02657E92C0AF8B900D887BA /* ChatListTableViewCell.xib */; };
+		E0609A332C491F8F0008E50A /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E0609A322C491F8F0008E50A /* SnapKit */; };
+		E0609A352C491FE60008E50A /* ChatListCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0609A342C491FE60008E50A /* ChatListCollectionViewController.swift */; };
 		E0C756872C0AF6140099B0E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C756862C0AF6140099B0E5 /* AppDelegate.swift */; };
 		E0C756892C0AF6140099B0E5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C756882C0AF6140099B0E5 /* SceneDelegate.swift */; };
 		E0C7568B2C0AF6140099B0E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7568A2C0AF6140099B0E5 /* ViewController.swift */; };
@@ -36,6 +38,7 @@
 		E02657E52C0AF7DB00D887BA /* setupUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = setupUI.swift; sourceTree = "<group>"; };
 		E02657E82C0AF8B900D887BA /* ChatListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListTableViewCell.swift; sourceTree = "<group>"; };
 		E02657E92C0AF8B900D887BA /* ChatListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatListTableViewCell.xib; sourceTree = "<group>"; };
+		E0609A342C491FE60008E50A /* ChatListCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListCollectionViewController.swift; sourceTree = "<group>"; };
 		E0C756832C0AF6140099B0E5 /* TravelTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0C756862C0AF6140099B0E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0C756882C0AF6140099B0E5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0609A332C491F8F0008E50A /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +140,7 @@
 				E02657E72C0AF8A700D887BA /* Cell */,
 				E0C7569A2C0AF6530099B0E5 /* ChatList.storyboard */,
 				E0C7569C2C0AF65E0099B0E5 /* ChatListViewController.swift */,
+				E0609A342C491FE60008E50A /* ChatListCollectionViewController.swift */,
 			);
 			path = ChatList;
 			sourceTree = "<group>";
@@ -187,6 +192,9 @@
 			dependencies = (
 			);
 			name = TravelTalk;
+			packageProductDependencies = (
+				E0609A322C491F8F0008E50A /* SnapKit */,
+			);
 			productName = TravelTalk;
 			productReference = E0C756832C0AF6140099B0E5 /* TravelTalk.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +223,9 @@
 				Base,
 			);
 			mainGroup = E0C7567A2C0AF6140099B0E5;
+			packageReferences = (
+				E0609A312C491F8F0008E50A /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = E0C756842C0AF6140099B0E5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -261,6 +272,7 @@
 				E0E49F092C0C2B9000DA4BCB /* ChatRoomViewController.swift in Sources */,
 				E0C756892C0AF6140099B0E5 /* SceneDelegate.swift in Sources */,
 				E02657E62C0AF7DB00D887BA /* setupUI.swift in Sources */,
+				E0609A352C491FE60008E50A /* ChatListCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,6 +505,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E0609A312C491F8F0008E50A /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E0609A322C491F8F0008E50A /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E0609A312C491F8F0008E50A /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E0C7567B2C0AF6140099B0E5 /* Project object */;
 }

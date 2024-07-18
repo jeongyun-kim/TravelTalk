@@ -4,7 +4,7 @@
 //  Created by Den on 2024/05/11.
 //
 
-import Foundation
+import UIKit
 
 enum User: String {
     case hue = "Hue"
@@ -23,7 +23,8 @@ enum User: String {
 }
 
 //트래블톡 화면에서 사용할 데이터 구조체
-struct ChatRoom {
+struct ChatRoom: Hashable, Identifiable {
+    let id: UUID = UUID()
     let chatroomId: Int //채팅방 고유 ID
     let chatroomImage: [String] //채팅방에 속한 유저 이미지
     let chatroomName: String //채팅방 이름
@@ -41,7 +42,7 @@ struct ChatRoom {
 }
 
 //채팅 화면에서 사용할 데이터 구조체
-struct Chat {
+struct Chat: Hashable {
     let user: User
     let date: String
     let message: String
